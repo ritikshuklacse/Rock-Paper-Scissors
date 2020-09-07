@@ -2,23 +2,23 @@ import random, sys
 
 print('ROCK, PAPER, SCISSORS')
 
-# These variables keep track of the number of wins, losses and ties
+# These 3 variables wil help us to keep track of the number of wins, losses and ties
 wins = 0
 losses = 0
 ties = 0
 
 while True:     # The main game loop
-    print('%s Wins, %s Losses, %s Ties \n\n'% (wins, losses, ties))
+    print('%s Wins, %s Losses, %s Ties \n\n\n'% (wins, losses, ties))
     while True:     # The player input loop
         print('Enter your move: (r)ock (p)aper (s)cissors or (q)uit')
         playerMove = input()
         if playerMove == 'q':
-            sys.exit()      # quit the program
+            sys.exit()      # quit the program if player wants to quit
         elif playerMove == 'r' or playerMove == 'p' or playerMove == 's':
             break       # Break out of the player input loop
         print('Type one of r, p, s or q')
 
-    # Display what the player choose
+    # Now we will display what the player had chosen
     if playerMove == 'r':
         print('ROCK versus...')
     elif playerMove == 'p':
@@ -26,7 +26,7 @@ while True:     # The main game loop
     elif playerMove == 's':
         print("SCISSORS versus...")
 
-    # Display what computer choose
+    # Now we will display what computer chooses
     randomNumber = random.randint(1, 3)
     if randomNumber == 1:
         computerMove = 'r'
@@ -38,7 +38,7 @@ while True:     # The main game loop
         computerMove = 's'
         print('SCISSORS')
 
-    # Display and record the win/loss/tie
+    # Let us now display and set our wins/losses/ties accordingly
     if playerMove == computerMove:
         print("It's a tie!")
         ties = ties + 1
